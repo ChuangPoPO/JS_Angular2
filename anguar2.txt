@@ -1,0 +1,11 @@
+--- tutorial 1
+
+npm install -g -angular-cli
+
+下載github上的檔案
+
+將終端機位置移到(cd)下載下來的檔案位置
+
+ng new ninja-directory
+
+---
