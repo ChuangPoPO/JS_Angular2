@@ -1,5 +1,7 @@
 ### angular-quickstart
  
+ 進度：學習已完成
+ 
  來自 Angular2 官方網站的教學範例
  Angular2 app 的初始文件 
 
@@ -16,6 +18,8 @@
 
 來自官方網站的進階教學範例
 
+進度：目前進行中 10 %...
+
 [官方網站](https://angular.io/docs/ts/latest/tutorial/)
 
 [Gaduo的範例](https://github.com/Poduo/Angular2-guide-example)
@@ -24,10 +28,14 @@
 
 ### angular-quick40
 
+進度：遇到問題，先暫停
+
 來自Will在台中演講的教學，練習step by step操作
 
 ---
 
 ### quickstart-master
+
+進度：尚未開始
 
 來自 Youtube 教學影片的範例
