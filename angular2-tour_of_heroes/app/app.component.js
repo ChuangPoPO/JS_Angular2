@@ -11,15 +11,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
+        this.title = 'Tour of Heroes';
+        //hero = 'Windstorm';
+        this.hero = {
+            id: 1,
+            name: 'Gaduo'
+        };
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<h1>My SECOND Angular App</h1>'
+            template: "\n  <h1>{{title}}</h1>\n  <h2>{{hero.name}} details!</h2>\n  \n  <div>\n    <label>id : </label>{{hero.id}}\n  </div>\n  \n  <div>\n    <label>name : </label>\n    <input\n      [(ngModel)] = \"hero.name\" placeholder=\"name\">\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
+// hero property
+var Hero = (function () {
+    function Hero() {
+    }
+    return Hero;
+}());
+exports.Hero = Hero;
 //# sourceMappingURL=app.component.js.map
