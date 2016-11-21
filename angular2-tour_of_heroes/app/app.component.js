@@ -12,11 +12,7 @@ var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Tour of Heroes';
-        //hero = 'Windstorm';
-        this.hero = {
-            id: 1,
-            name: 'Gaduo'
-        };
+        this.heroes = HEROES;
     }
     AppComponent = __decorate([
         core_1.Component({
@@ -35,4 +31,17 @@ var Hero = (function () {
     return Hero;
 }());
 exports.Hero = Hero;
+//The HEROES array is of type Hero
+var HEROES = [
+    { id: 11, name: 'Mr. Chien' },
+    { id: 12, name: 'Mrs. Super' },
+    { id: 13, name: 'Dr. CV' },
+    { id: 14, name: 'Mrs. PoPO' },
+    { id: 15, name: 'Mr. Gaduo' },
+    { id: 16, name: 'Mr. GG' },
+    { id: 17, name: 'Mrs. vivian' },
+    { id: 18, name: 'Mr. Kevin' },
+    { id: 19, name: 'Mom' },
+    { id: 20, name: 'papa' }
+];
 //# sourceMappingURL=app.component.js.map
