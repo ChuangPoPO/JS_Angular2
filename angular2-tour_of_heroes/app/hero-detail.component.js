@@ -16,6 +16,7 @@ var HeroDetailComponent = (function () {
     HeroDetailComponent = __decorate([
         module_1.Component({
             selector: 'my-hero-detail',
+            template: "\n\t\t<div *ngIf = \"hero\">\n\t\t\t<h2>{{hero.name}} details !</h2>\n\t\t\t<div><label>id: </label>{{hero.id}}</div>\n\t\t\t<div>\n\t\t\t\t<label>name: </label>\n\t\t\t\t<input [(ngModel)] = \"hero.name\" placeholder = \"name\" />\n\t\t\t</div>\n\t\t</div>\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], HeroDetailComponent);
