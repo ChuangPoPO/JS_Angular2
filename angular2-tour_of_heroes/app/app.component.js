@@ -9,11 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-// // hero property
-//  export class Hero {
-//    id: number;
-//    name: string;
-//  }
 //The HEROES array is of type Hero
 var HEROES = [
     { id: 11, name: 'Mr. Chien' },

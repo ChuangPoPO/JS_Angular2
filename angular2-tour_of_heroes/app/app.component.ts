@@ -2,13 +2,6 @@ import { Component } from '@angular/core';
 import { Hero } from './hero';
 
 
-// // hero property
-//  export class Hero {
-//    id: number;
-//    name: string;
-//  }
-
-
  //The HEROES array is of type Hero
  const HEROES: Hero[] = [
    {id:11 , name: 'Mr. Chien'},
@@ -113,10 +106,5 @@ export class AppComponent {
   onSelect(hero: Hero): void{
     this.selectedHero = hero;
   }
-  //hero = 'Windstorm';
-  // hero: Hero = {
-  //    id: 1,
-  //    name: 'Gaduo'
-  //  };
-  
+
  }
