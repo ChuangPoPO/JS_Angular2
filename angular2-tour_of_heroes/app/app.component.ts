@@ -3,6 +3,7 @@ import { Hero } from './hero';
 
 
  //The HEROES array is of type Hero
+ //Hero 型態定義在 hero.ts
  const HEROES: Hero[] = [
    {id:11 , name: 'Mr. Chien'},
    {id:12 , name: 'Mrs. Super'},
@@ -16,7 +17,8 @@ import { Hero } from './hero';
    {id:20 , name: 'papa'}
  ];
 
-
+//@Component 必須寫在 export class AppComponent{}之前
+//@Component 是註記 AppComponent 是一個 Component
 @Component({
   selector: 'my-app',
   template: `
@@ -26,15 +28,23 @@ import { Hero } from './hero';
 
     <ul class="heroes">
       <li *ngFor = "let hero of heroes"
+
+          <!-- 當hero是selectedHero時，便套上selected這個css -->
           [class.selected] = "hero === selectedHero"
-          (click) = "onSelect(hero)" >
 
-        <!-- each hero goes here-->
+          <!-- 當滑鼠點某個hero時，便將這個hero傳入onSelect方法 -->
+          (click) = "onSelect(hero)" > 
 
+        <!-- 每個hero會套badge這個css，在這顯示-->
         <span class="badge">{{hero.id}}</span>{{hero.name}}
+
       </li>
     </ul>
 
+
+    <!-- 呼叫 my-hero-detail component 用[hero]傳入selectedHero -->
+    <!-- hero-detail.component.ts 會用 @Input() 來接收這個selectedHero-->
+    <!-- 並assign給hero-detail.component.ts 內的 hero-->
     <my-hero-detail [hero]="selectedHero"></my-hero-detail>
   `,
 
@@ -101,7 +111,9 @@ export class AppComponent {
 
   title = 'Tour of Heroes';
   heroes = HEROES;
-  selectedHero: Hero; //沒有給定初始值，是在使用者選擇後才被傳入
+
+  //沒有給定初始值，是在使用者選擇後才被傳入 ，型態為Hero
+  selectedHero: Hero; 
 
   onSelect(hero: Hero): void{
     this.selectedHero = hero;
