@@ -20,7 +20,7 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                forms_1.FormsModule
+                forms_1.FormsModule //讓表單輸入支援雙向資料綁定
             ],
             declarations: [
                 app_component_1.AppComponent,

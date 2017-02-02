@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Hero } from './hero';
 
 
- //The HEROES array is of type Hero
- //Hero 型態定義在 hero.ts
+ /*The HEROES array is of type Hero
+ Hero 型態定義在 hero.ts*/
  const HEROES: Hero[] = [
    {id:11 , name: 'Mr. Chien'},
    {id:12 , name: 'Mrs. Super'},
@@ -27,15 +27,15 @@ import { Hero } from './hero';
     <h2> My Heroes </h2>
 
     <ul class="heroes">
+
+    <!-- 當hero是selectedHero時，便套上selected這個css -->
+    <!-- 當滑鼠點某個hero時，便將這個hero傳入onSelect方法 -->
+    <!-- 每個hero會套badge這個css，在這顯示-->
+
       <li *ngFor = "let hero of heroes"
-
-          <!-- 當hero是selectedHero時，便套上selected這個css -->
           [class.selected] = "hero === selectedHero"
+          (click) = "onSelect(hero)">
 
-          <!-- 當滑鼠點某個hero時，便將這個hero傳入onSelect方法 -->
-          (click) = "onSelect(hero)" > 
-
-        <!-- 每個hero會套badge這個css，在這顯示-->
         <span class="badge">{{hero.id}}</span>{{hero.name}}
 
       </li>
