@@ -4,19 +4,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 
 import { AppComponent }  from './app.component';
+import { HeroDetailComponent} from './hero-detail.component';
+
 
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule //讓表單輸入支援雙向資料綁定
     ],
 
   declarations: [
-    AppComponent 
+    AppComponent,
+    HeroDetailComponent 
     ],
     
-  bootstrap: [
-    AppComponent
-    ]
+  bootstrap: [ AppComponent ]
 })
+
 export class AppModule { }
