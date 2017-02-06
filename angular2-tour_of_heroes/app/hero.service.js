@@ -12,7 +12,9 @@ var core_1 = require('@angular/core');
 var HeroService = (function () {
     function HeroService() {
     }
-    HeroService.prototype.getHero = function () { }; //stub
+    HeroService.prototype.getHeroes = function () {
+        return HEROS;
+    }; //stub
     HeroService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])
