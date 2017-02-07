@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { Hero } from './hero';
 
 
-heroes:Hero[];
-
 //@Component 必須寫在 export class AppComponent{}之前
 //@Component 是註記 AppComponent 是一個 Component
 @Component({
@@ -91,16 +89,26 @@ heroes:Hero[];
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
- `]
+ `],
+
+ providers: [HeroService]
 })
 
 export class AppComponent {
 
   title = 'Tour of Heroes';
-  heroes = HEROES;
+  heroes:Hero[];
 
   //沒有給定初始值，是在使用者選擇後才被傳入 ，型態為Hero
   selectedHero: Hero; 
+
+  //建構出HeroService服務，以heroService為名作為注入點
+  constructor(private heroService: HeroService){}
+
+  //使用HeroService內的服務
+  getHeroes(): void{
+    this.heroes = this.heroService.getHeroes();
+  }
 
   onSelect(hero: Hero): void{
     this.selectedHero = hero;

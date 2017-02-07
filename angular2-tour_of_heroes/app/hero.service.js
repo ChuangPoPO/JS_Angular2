@@ -9,13 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var mock_heroes_1 = require('./mock-heroes'); //匯入HEROES陣列中的資料
 var HeroService = (function () {
     function HeroService() {
     }
     HeroService.prototype.getHeroes = function () {
-        return HEROS;
+        return mock_heroes_1.HEROES;
     }; //stub
     HeroService = __decorate([
+        //匯入HEROES陣列中的資料
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])
     ], HeroService);
