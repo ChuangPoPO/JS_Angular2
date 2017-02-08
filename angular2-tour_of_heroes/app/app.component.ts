@@ -108,7 +108,7 @@ export class AppComponent implement OnInit {
 
   //使用HeroService內的服務
   getHeroes(): void{
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
   }
 
   ngOnInit(): void{
