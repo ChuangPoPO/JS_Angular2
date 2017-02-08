@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
+
 import { Hero } from './hero';
-import { OnInit } from '@angular/core';
+import { HeroService } from './hero.service';
 
 
 //@Component 必須寫在 export class AppComponent{}之前
@@ -95,7 +96,7 @@ import { OnInit } from '@angular/core';
  providers: [HeroService]
 })
 
-export class AppComponent implement OnInit {
+export class AppComponent implements OnInit {
 
   title = 'Tour of Heroes';
   heroes:Hero[];
