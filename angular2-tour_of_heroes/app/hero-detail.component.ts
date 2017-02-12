@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { Hero } from './hero';
 
 @Component({
@@ -15,7 +15,11 @@ import { Hero } from './hero';
 	`
 })
 
-export class HeroDetailComponent{
+export class HeroDetailComponent implements OnChanges {
 	@Input()
 	hero: Hero;
+
+  ngOnChanges(): void{
+    console.debug("HeroDetailComponent Onchanges");
+  }
 }

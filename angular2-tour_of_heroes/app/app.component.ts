@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit, OnChanges } from '@angular/core';
 
 import { Hero } from './hero';
 import { HeroService } from './hero.service';
@@ -96,7 +96,7 @@ import { HeroService } from './hero.service';
  providers: [HeroService]
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnChanges {
 
   title = 'Tour of Heroes';
   heroes:Hero[];
@@ -105,7 +105,9 @@ export class AppComponent implements OnInit {
   selectedHero: Hero; 
 
   //建構出HeroService服務，以heroService為名作為注入點
-  constructor(private heroService: HeroService){}
+  constructor(private heroService: HeroService){
+    console.debug("constructor");
+  }
 
   //使用HeroService內的服務
   getHeroes(): void{
@@ -113,7 +115,12 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void{
+    console.debug("ngOnInit");
     this.getHeroes();
+  }
+
+  ngOnChanges(): void{
+    console.debug("OnChanges");
   }
 
   onSelect(hero: Hero): void{
