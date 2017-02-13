@@ -117,6 +117,9 @@ export class AppComponent implements OnInit, OnChanges {
   //所以需要用 lambda 的方式取得資料，Lambda "a => a"
   getHeroes(): void{
     this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    
+    //讓資料取得時間變長
+    //this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
   }
 
 
