@@ -1,21 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
+
 import { Hero } from './hero';
+import { HeroService } from './hero.service';
 
-
- //The HEROES array is of type Hero
- //Hero 型態定義在 hero.ts
- const HEROES: Hero[] = [
-   {id:11 , name: 'Mr. Chien'},
-   {id:12 , name: 'Mrs. Super'},
-   {id:13 , name: 'Dr. CV'},
-   {id:14 , name: 'Mrs. PoPO'},
-   {id:15 , name: 'Mr. Gaduo'},
-   {id:16 , name: 'Mr. GG'},
-   {id:17 , name: 'Mrs. vivian'},
-   {id:18 , name: 'Mr. Kevin'},
-   {id:19 , name: 'Mom'},
-   {id:20 , name: 'papa'}
- ];
 
 //@Component 必須寫在 export class AppComponent{}之前
 //@Component 是註記 AppComponent 是一個 Component
@@ -23,19 +10,19 @@ import { Hero } from './hero';
   selector: 'my-app',
   template: `
     <h1>{{title}}</h1>
-
     <h2> My Heroes </h2>
 
+
     <ul class="heroes">
+
+    <!-- 當hero是selectedHero時，便套上selected這個css -->
+    <!-- 當滑鼠點某個hero時，便將這個hero傳入onSelect方法 -->
+    <!-- 每個hero會套badge這個css，在這顯示-->
+
       <li *ngFor = "let hero of heroes"
-
-          <!-- 當hero是selectedHero時，便套上selected這個css -->
           [class.selected] = "hero === selectedHero"
+          (click) = "onSelect(hero)">
 
-          <!-- 當滑鼠點某個hero時，便將這個hero傳入onSelect方法 -->
-          (click) = "onSelect(hero)" > 
-
-        <!-- 每個hero會套badge這個css，在這顯示-->
         <span class="badge">{{hero.id}}</span>{{hero.name}}
 
       </li>
@@ -104,17 +91,53 @@ import { Hero } from './hero';
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
- `]
+ `],
+
+ providers: [HeroService]
 })
 
-export class AppComponent {
+
+export class AppComponent implements OnInit, OnChanges {
 
   title = 'Tour of Heroes';
-  heroes = HEROES;
+  heroes: Hero[];
 
-  //沒有給定初始值，是在使用者選擇後才被傳入 ，型態為Hero
-  selectedHero: Hero; 
+  //沒有給定初始值，是在使用者選擇後才被傳入，型態為Hero
+  selectedHero: Hero;
 
+
+  //建構出HeroService服務，以heroService為名作為注入點
+  constructor(private heroService: HeroService){
+    console.debug("constructor");
+  }
+
+
+  //使用HeroService內的服務
+  //因為 service 回應的 Primes 物件是非同步的(不是馬上回應的)
+  //所以需要用 lambda 的方式取得資料，Lambda "a => a"
+  getHeroes(): void{
+    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    
+    //讓資料取得時間變長
+    //this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
+  }
+
+
+  //在一開始時便呼叫getHeroes來取得資料
+  ngOnInit(): void{
+    console.debug("ngOnInit");
+    this.getHeroes();
+  }
+
+
+
+  ngOnChanges(): void{
+    console.debug("OnChanges");
+  }
+
+
+
+  //被選取的hero存為selectedHero
   onSelect(hero: Hero): void{
     this.selectedHero = hero;
   }

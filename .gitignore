@@ -1,2 +1,4 @@
 /*/node_modules
 /*/typings
+/angular2-tour_of_heroes/app/*.js
+/angular2-tour_of_heroes/app/*.map
