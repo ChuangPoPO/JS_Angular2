@@ -7,7 +7,7 @@ import { HeroService } from './hero.service';
 //@Component 必須寫在 export class AppComponent{}之前
 //@Component 是註記 AppComponent 是一個 Component
 @Component({
-  selector: 'my-app',
+  selector: 'my-heroes',
   template: `
     <h1>{{title}}</h1>
     <h2> My Heroes </h2>
@@ -97,7 +97,7 @@ import { HeroService } from './hero.service';
 })
 
 
-export class AppComponent implements OnInit, OnChanges {
+export class HeroesComponent implements OnInit, OnChanges {
 
   title = 'Tour of Heroes';
   heroes: Hero[];
