@@ -9,7 +9,7 @@ import { HeroService } from './hero.service';
 @Component({
   selector: 'my-heroes',
   template: `
-    <h1>{{title}}</h1>
+    
     <h2> My Heroes </h2>
 
 
@@ -93,13 +93,12 @@ import { HeroService } from './hero.service';
   }
  `],
 
- providers: [HeroService]
+ //providers: [HeroService]
 })
 
 
 export class HeroesComponent implements OnInit, OnChanges {
 
-  title = 'Tour of Heroes';
   heroes: Hero[];
 
   //沒有給定初始值，是在使用者選擇後才被傳入，型態為Hero
