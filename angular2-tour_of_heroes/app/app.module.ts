@@ -1,19 +1,18 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
-import { RouterModule } from '@angular/router';
-
 
 import { AppComponent }  from './app.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroesComponent } from './heroes.component';
 import { HeroService } from './hero.service';
 
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule //讓表單輸入支援雙向資料綁定
+    FormsModule, //讓表單輸入支援雙向資料綁定
     RouterModule.forRoot([
 		{	//route definition
 			path: 'heroes',
@@ -24,16 +23,17 @@ import { HeroService } from './hero.service';
 
   //For Angular recognizes the <my-heroes> tags
   declarations: [
-    AppComponent,
-    HeroDetailComponent,
-    HeroesComponent
+	AppComponent,
+ 	HeroDetailComponent,
+	HeroesComponent
   ],
   
   providers: [
-  	HeroService
+    HeroService
   ],
 
   bootstrap: [ AppComponent ]
 })
 
-export class AppModule { }
+export class AppModule {
+}
