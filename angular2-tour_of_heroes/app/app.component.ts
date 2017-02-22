@@ -5,10 +5,13 @@ import {Component} from '@angular/core';
 	selector: 'my-app',
 	template: `
 		<h1>{{title}}</h1>
-
-		<a routerLink = "/heroes">Heroes</a>
-		<router-outlet></router-outlet>
 		
+		<nav>
+			<a routerLink = "/dashboard">Dashboard</a>
+			<a routerLink = "/heroes">Heroes</a>
+		</nav>
+		
+		<router-outlet></router-outlet>
 
 		<!-- <my-heroes></my-heroes> -->
 	`
