@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 
-@Component({
+@Component ({
 	selector: 'my-app',
 	template: `
 		<h1>{{title}}</h1>
@@ -14,6 +14,6 @@ import {Component} from '@angular/core';
 	`
 })
 
-export class AppComponent{
+export class AppComponent {
 	title = 'Tour of Heroes';
 }
