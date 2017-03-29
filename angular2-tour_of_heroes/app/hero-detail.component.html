@@ -1,12 +1,12 @@
 <div *ngIf = "hero">
     
-    <a *ngFor="let hero of heroes"  [routerLink]="['/detail', hero.id]"  class="col-1-4">
+    <a *ngFor="let hero of heroes"  [routerLink]="['/detail', hero.id]"  class="col-1-4"></a>
 
     
     <h2>{{hero.name}} details !</h2>
     
     <div>
-    <label>id: </label>{{hero.id}}
+        <label>id: </label>{{hero.id}}
     </div>
 
     <div>
@@ -14,5 +14,5 @@
         <input [(ngModel)] = "hero.name" placeholder = "name" />
     </div>
 
-    <button (click)="goBack()"> Back </button> 
+    <button (click)="goBack()" > Back </button> 
 </div>
