@@ -7,7 +7,7 @@ import { HeroDetailComponent } from './hero-detail.component';
 import { HeroesComponent } from './heroes.component';
 import { HeroService } from './hero.service';
 import { DashboardComponent } from './dashboard.component';
-
+import { AppRoutingModule } from './app-routing.module';
 
 import { RouterModule } from '@angular/router';
 
@@ -15,22 +15,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     FormsModule, //讓表單輸入支援雙向資料綁定
-    //route definition array
-    RouterModule.forRoot([
-		{
-			path: 'heroes',
-			component: HeroesComponent
-		},
-		{
-			path: 'dashboard',
-			component: DashboardComponent
-		},
-		{	//redirect route
-			path:'',
-			redirectTo: '/dashboard',
-			pathMatch: 'full'
-		}
-	])
+		AppRoutingModule
   ],
 
   //For Angular recognizes the <my-heroes> tags

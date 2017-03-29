@@ -1,0 +1,18 @@
+<div *ngIf = "hero">
+    
+    <a *ngFor="let hero of heroes"  [routerLink]="['/detail', hero.id]"  class="col-1-4">
+
+    
+    <h2>{{hero.name}} details !</h2>
+    
+    <div>
+    <label>id: </label>{{hero.id}}
+    </div>
+
+    <div>
+        <label>name: </label>
+        <input [(ngModel)] = "hero.name" placeholder = "name" />
+    </div>
+
+    <button (click)="goBack()"> Back </button> 
+</div>
