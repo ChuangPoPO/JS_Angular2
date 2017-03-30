@@ -1,3 +1,20 @@
+## Angular2 Memo
+
+1. Name 命名方式：SpecialSuperHeroService --> special-super-hero.service.ts
+1. `Lambda "a => a"`：因為回應的物件是非同步的(不是馬上回應)，所以需要用 lambda 的方式取得資料。
+1. `*ngFor = "let hero of heroes"`
+1. `[(ngModel)]`：來綁定雙向資料
+1. `[class.selected]="hero === selectedHero"`：在" "內成立 (truthy) 時，套用 selected
+1. `:`：後面放的是屬性
+1. `=`：後面是要 assign 的值
+1. `==`：基本型態間的比較 (比記憶體位置)
+1. `===`：物件間的比較
+1. [Property] 屬性、[Attribute] 屬性、[Class] 類別、[Style]css
+1. (event) 事件
+1. [(Two-way)] 屬性與事件
+
+---
+
 ### angular-quickstart
  
  進度：學習已完成
@@ -54,7 +71,7 @@
  - 使用 ngOnInit 生命週期鉤子，以便在 AppComponent 觸發時獲取英雄數據
  - 建立了一個模擬的英雄數據，並把它匯入我們的服務中
 
-實作 5：路由 Routing
+實作 5：路由 Routing ===============ing
  - 使用路由在不同的檢視及其元件之間進行導航
  - 新增了 Angular 路由器 在各個不同元件之間導航
  - 學會了如何建立路由鏈接來表示導航欄的選項
