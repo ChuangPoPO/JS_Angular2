@@ -9,8 +9,8 @@ import { Hero } from './hero';
 
 @Component({
 	selector: 'hero-detail',
-	templateUrl: './hero-detail.component.html',
-	styleUrls: ['./hero-detail.component.css'] 
+	templateUrl: './app/hero-detail.component.html',
+	styleUrls: ['./app/hero-detail.component.css'] 
 })
 
 export class HeroDetailComponent implements OnInit {
@@ -24,8 +24,18 @@ export class HeroDetailComponent implements OnInit {
 
   ngOnInit(): void{
 		this.route.params
-		.switchMap((params:Params) => this.heroService.getHero(+params['id']))
-		.subscribe(hero => this.hero = hero); //印出來看看(params)=>{console.log(params['id'])...
+		.switchMap((params:Params) => 
+			{
+				console.log(params);
+				return this.heroService.getHero(+params['xyz'])
+			}
+		)
+		.subscribe(hero => 
+			{
+				console.log(hero);
+				this.hero = hero
+			}
+		); //印出來看看(params)=>{console.log(params['id'])...
   }
 
   //回到上一頁

@@ -9,8 +9,8 @@ import { HeroService } from './hero.service';
 //@Component 是註記 AppComponent 是一個 Component
 @Component({
   selector: 'my-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.css'],
+  templateUrl: './app/heroes.component.html',
+  styleUrls: ['./app/heroes.component.css'],
 
  //providers: [HeroService]
 })
