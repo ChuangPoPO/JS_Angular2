@@ -7,17 +7,22 @@ import {HEROES} from './mock-heroes'; //匯入HEROES陣列中的資料
 
 export class HeroService {
 
-	getHeroes(): Promise <Hero[]> {
-		return Promise.resolve(HEROES);
+	getHeroes(): Promise<Hero[]> {
+    return Promise.resolve(HEROES);
+    }
+
+	getHero(id:number): Promise <Hero> {
+		return this.getHeroes()
+		.then(heroes => heroes.find(hero => hero.id === id));
 	} //stub
 
 
 	//讓資料取得時間變長
-	getHeroesSlowly(): Promise<Hero[]> {
-  		return new Promise(
-	  	resolve => {
-	    	// Simulate server latency with 2 second delay
-	    	setTimeout(() => resolve(this.getHeroes()), 2000);
-  		});
-  	}
+	// getHeroesSlowly(): Promise<Hero[]> {
+  	// 	return new Promise(
+	//   	resolve => {
+	//     	// Simulate server latency with 2 second delay
+	//     	setTimeout(() => resolve(this.getHeroes()), 2000);
+  	// 	});
+  	// }
 }
