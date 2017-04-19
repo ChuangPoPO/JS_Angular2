@@ -1,12 +1,14 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent }  from './app.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroesComponent } from './heroes.component';
 import { HeroService } from './hero.service';
 import { DashboardComponent } from './dashboard.component';
+
 import { AppRoutingModule } from './app-routing.module';
 
 import { RouterModule } from '@angular/router';
@@ -15,7 +17,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     FormsModule, //讓表單輸入支援雙向資料綁定
-		AppRoutingModule
+		AppRoutingModule,
+    HttpModule
   ],
 
   //For Angular recognizes the <my-heroes> tags
@@ -26,9 +29,7 @@ import { RouterModule } from '@angular/router';
 	HeroesComponent
   ],
   
-  providers: [
-    HeroService
-  ],
+  providers: [ HeroService ],
 
   bootstrap: [ AppComponent ]
 })
