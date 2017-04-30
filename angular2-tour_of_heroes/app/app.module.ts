@@ -22,7 +22,7 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     FormsModule, //讓表單輸入支援雙向資料綁定
 		AppRoutingModule,
-    HttpModule
+    HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
 
