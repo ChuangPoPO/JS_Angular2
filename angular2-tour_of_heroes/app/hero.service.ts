@@ -9,7 +9,7 @@ import {Hero} from './hero'; //取得Hero型態
 
 export class HeroService {
 
-	private heroesUrl = 'api/heroes'; //URL to web api
+	private heroesUrl = 'api/heroes';//https://api.myjson.com/bins/ot3yb'; //URL to web api
 
 	constructor(private http:Http){}
 
